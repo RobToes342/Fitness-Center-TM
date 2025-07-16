@@ -1,0 +1,12 @@
+@use "./index.scss" as index;
+
+body {
+  background-color: index.$primary-color;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.logo {
+  height: 6em;
+  margin: 1rem auto 0;
+}
