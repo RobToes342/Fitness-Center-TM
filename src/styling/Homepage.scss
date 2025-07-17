@@ -7,6 +7,12 @@ body {
 }
 
 .logo {
+  cursor: pointer;
   height: 6em;
   margin: 1rem auto 0;
+  transition: filter 500ms ease-out;
+
+  &:hover {
+    filter: drop-shadow(0 0 0.15rem rgb(180, 180, 180));
+  }
 }
