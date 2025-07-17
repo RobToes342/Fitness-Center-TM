@@ -1,0 +1,38 @@
+@use './index.scss';
+
+#footer {
+    position: relative;
+    z-index: 1000;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#contact-details {
+    @include index.content-center;
+    
+    width: 100vw;
+    height: 6vh;
+    background-color: lighten(index.$quaternary--color, 0.6);
+
+    a {
+        color: index.$tertiary--color;
+        margin-right: 1rem;
+        font-size: 1.5rem;
+        transition-duration: 500ms;
+    
+        &:hover {
+            color: lighten(index.$tertiary--color, 20)
+        }
+    }
+}
+
+#copy-rights {
+    @include index.content-center;
+    width: 100vw;
+    height: 5vh;
+    background-color: index.$quaternary--color;
+}

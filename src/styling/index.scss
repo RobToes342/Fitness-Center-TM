@@ -34,6 +34,12 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
+body {
+  background-color: $primary-color;
+  min-width: 100vw;
+  min-height: 300vh;
+}
+
 
 #root {
 

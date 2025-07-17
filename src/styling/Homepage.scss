@@ -1,10 +1,9 @@
 @use "./index.scss" as index;
 
-body {
-  background-color: index.$primary-color;
-  min-width: 100vw;
-  min-height: 100vh;
+#homepage {
+  
 }
+
 
 .logo {
   cursor: pointer;
@@ -12,7 +11,8 @@ body {
   margin: 1rem auto 0;
   transition: filter 500ms ease-out;
 
-  &:hover {
-    filter: drop-shadow(0 0 0.15rem rgb(180, 180, 180));
-  }
+}
+#markus-maehler {
+  border: 0.25rem solid index.$tertiary--color ;
+  border-radius: 1rem;
 }
