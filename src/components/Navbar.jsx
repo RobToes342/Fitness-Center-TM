@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDumbbell, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import '../styling/Navbar.scss';
+import longLogo from '../assets/Long-Logo.png'
 
 export default function Navbar() {
   const [showNavbar, setShowNavbar] = useState(true);
@@ -38,14 +39,10 @@ export default function Navbar() {
       animate={{ y: showNavbar ? 0 : -100 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="logo">
-        <motion.div
-          animate={{ rotate: [0, 15, -15, 0] }}
-          transition={{ duration: 2, repeat: Infinity, repeatDelay: 5 }}
-        >
-          <FontAwesomeIcon icon={faDumbbell} />
-        </motion.div>
-        <span>Fitness Center TM</span>
+      <div >
+        <NavLink to="/" end>
+        <img className="logo" src={longLogo}/>
+        </NavLink>
       </div>
 
       <ul className={`menu ${isOpen ? 'open' : ''}`}>

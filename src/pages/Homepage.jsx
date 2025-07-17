@@ -1,12 +1,15 @@
 import logoLarge from '../assets/Logo-Large-White.png'
 import markusMaehler from '../assets/Markus-Maehler.png'
+import bgMaehler from '../assets/home-modern-bg-autor.jpg'
 import CurvedLoop from '../ReactBits/CurvedLoop';
 import CountUp from '../ReactBits/CountUp';
 
 function Homepage() { 
   return (
     <div id='homepage'>
+    
     <img id='logo-large' className='logo' src={logoLarge} />
+    
     <CountUp
       from={0}
       to={100}
@@ -17,7 +20,7 @@ function Homepage() {
     />
     {/* 
     <img id='markus-maehler' src={markusMaehler}/>
-    */}
+     */}
     <CurvedLoop 
       marqueeText="Fitness ✦ Kurse ✦ Judo ✦ Taekwando ✦ CyberFitness ✦ Körperanalye ✦ Temming ✦ Mähler ✦ Solarium ✦ Kampfsport ✦ Einzeleinführung ✦ Rehasport ✦"
       speed={1}
