@@ -1,11 +1,11 @@
 @use "./index.scss" as index;
 
-#homepage {
+.homepage {
   
 }
 
 
-.logo {
+.logo-large {
   cursor: pointer;
   height: 6em;
   margin: 1rem auto 0;
@@ -14,4 +14,10 @@
 }
 #markus-maehler {
   border-radius: 0.5rem;
+}
+
+.title-screen {
+  width: 100vw;
+  height: 100dvh;
+  background-color: #000000;
 }

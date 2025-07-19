@@ -16,16 +16,16 @@
     
     width: 100vw;
     height: 6vh;
-    background-color: lighten(index.$quaternary--color, 0.6);
+    background-color: lighten(index.$quaternary-color, 0.6);
 
     a {
-        color: index.$tertiary--color;
+        color: index.$tertiary-color;
         margin-right: 1rem;
         font-size: 1.5rem;
         transition-duration: 500ms;
     
         &:hover {
-            color: lighten(index.$tertiary--color, 20)
+            color: lighten(index.$tertiary-color, 20)
         }
     }
 }
@@ -34,5 +34,5 @@
     @include index.content-center;
     width: 100vw;
     height: 5vh;
-    background-color: index.$quaternary--color;
+    background-color: index.$quaternary-color;
 }

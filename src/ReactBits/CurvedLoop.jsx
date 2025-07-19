@@ -5,7 +5,7 @@ import {
   useMemo,
   useId
 } from "react";
-import "../styling/CurvedLoop.scss";
+import "../styles/CurvedLoop.scss";
 
 const CurvedLoop = ({
   marqueeText = "",

@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import './styling/App.scss'
-import './styling/Homepage.scss';
-import './styling/Footer.scss';
+import './styles/App.scss'
+import './styles/Homepage.scss';
+import './styles/Footer.scss';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import AnimatedRoutes from './components/AnimatedRoutes';
+import AnimatedRoutes from './routes/AnimatedRoutes';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {

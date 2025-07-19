@@ -1,4 +1,4 @@
-function Team() { 
+function UnserVerein() { 
   return (
     <div >
    
@@ -7,4 +7,4 @@ function Team() {
     
       
 }
-export default Team;
+export default UnserVerein;
