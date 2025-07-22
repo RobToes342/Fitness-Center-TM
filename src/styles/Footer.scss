@@ -1,38 +1,111 @@
-@use './index.scss';
+@use './index.scss' as index;
 
-#footer {
-    position: relative;
-    z-index: 1000;
-    width: 100vw;
+.footer {
+  background-color: #f8f8f8; // hell statt index.$primary-color
+  color: #333; // dunkle Schrift für Lesbarkeit
+  padding: 2rem;
+  font-size: 0.9rem;
+  font-family: 'Oswald', sans-serif;
+
+  &__top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: index.$primary-color; // Akzentfarbe für Überschrift
+  }
+
+  p, li {
+    margin: 0.3rem 0;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-}
 
-#contact-details {
-    @include index.content-center;
-    
-    width: 100vw;
-    height: 6vh;
-    background-color: lighten(index.$quaternary-color, 0.6);
+    svg {
+      margin-right: 0.5rem;
+      flex-shrink: 0;
 
-    a {
-        color: index.$tertiary-color;
-        margin-right: 1rem;
-        font-size: 1.5rem;
-        transition-duration: 500ms;
-    
-        &:hover {
-            color: lighten(index.$tertiary-color, 20)
-        }
     }
-}
+  }
 
-#copy-rights {
-    @include index.content-center;
-    width: 100vw;
-    height: 5vh;
-    background-color: index.$quaternary-color;
+  .generall-info-link {
+    transition: color 0.3s ease-out;
+
+    &:hover {
+      color: index.$secondary-color;
+         a {
+            color: index.$secondary-color;
+        }
+
+    }
+  }
+
+  a {
+    color: #333; // dunkler statt weiß
+    text-decoration: none;
+    transition: color 0.3s ease-out;
+
+    &:hover {
+      color: index.$secondary-color;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__generall {
+    font-weight: bold;
+  }
+
+  &__social {
+    .social-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+
+      .link-icon {
+        font-size: 1.4rem;
+        color: #333;
+        transition: color 300ms ease-out !important; 
+
+        &:hover {
+          color: index.$secondary-color;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    opacity: 0.8;
+    color: #666;
+  }
+
+  // Mobile Version
+  @media (max-width: 768px) {
+    &__top {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .social-icons {
+      justify-content: center;
+    }
+
+    h3 {
+      margin-top: 1rem;
+    }
+
+    p, li {
+      justify-content: center;
+    }
+  }
 }

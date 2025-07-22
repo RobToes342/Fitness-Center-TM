@@ -7,32 +7,55 @@
   top: 0;
   width: 100%;
   height: 4rem;
-  background: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(0.3rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 7rem;
+  padding: 0 clamp(2rem, 5vw, 15rem);
   z-index: 1000;
   font-family: "Oswald" !important;
+  font-weight: 500 !important;
 }
 
-.logo {
-  color: index.$primary-color;
-  font-weight: bold;
+.logo img {
+  width: clamp(11rem, 14vw, 19rem);
 }
 
 .nav-links {
   display: flex;
   gap: 2rem;
   list-style: none;
+  white-space: nowrap;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  padding-left: 2rem;
 
   li {
     position: relative;
 
+    &::after {
+      display: inline-block;               // wichtig: erlaubt transform
+      width: 1em;
+      content: "\f078";
+      font-family: 'Font Awesome\ 5 Free';
+      font-weight: 600;
+      transition: transform 300ms ease;    // nur transform reicht, schneller
+      transform-origin: center;            // optional, für saubere Rotation
+      margin-left: 0.3rem;
+      transform: rotate(0deg) ;
+    }
+    &:hover::after {
+      transform: rotate(180deg) ;
+      color: index.$secondary-color;
+    }
+
     a {
       text-decoration: none;
       color: index.$primary-color;
+      transition: color 300ms ease-out;   
+
+     
+
     }
     
       .dropdown-menu {
@@ -41,9 +64,10 @@
         pointer-events: none; // <- verhindert, dass der unsichtbare Bereich Maus-Events empfängt
         position: absolute;
         top: 100%;
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
         background: white;
-        min-width: 10rem;
+        width: 8.5rem;
         flex-direction: column;
         box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
         border-radius: 0.25rem;
@@ -53,8 +77,7 @@
           padding: 0.8rem 1rem;
           color: index.$primary-color;
           font-size: 0.9rem;
-          transition: color 300ms ease-out;          
-          transition: margin 300ms ease-out;   
+          transition: color, margin 300ms ease-out;           
 
           &::before {
             display: none;
@@ -62,11 +85,11 @@
             content: "\f054";
             font-family: 'Font Awesome\ 5 Free';
             font-weight: 600;
-            transition: all 5s ease;
+            transition: opacity 300ms ease ;
             margin-right: 0.3rem;
           }
           &:hover {
-            color: index.$secondery-color;
+            color: index.$secondary-color;
             margin-left: 0.5rem;
 
             &::before {
@@ -84,6 +107,9 @@
       pointer-events: auto;
     }
   }
+    li:hover > a {
+      color: index.$secondary-color;
+    }
 
 }
 
@@ -142,16 +168,22 @@
         padding: 0.5rem 1rem;
         color: index.$primary-color;
         text-decoration: none;
+        transition: color 300ms ease-out; 
+        
 
         &:hover {
-          background: index.$tertiary-color;
+          color: index.$secondary-color;
         }
       }
     }
   }
+  div.open > a {
+  color: index.$secondary-color;
+}
 }
 
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .burger { display: flex; }
+  .navbar { padding: 0 2rem; }
 }

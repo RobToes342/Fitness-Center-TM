@@ -1,7 +1,4 @@
-import { useState } from 'react'
 import './styles/App.scss'
-import './styles/Homepage.scss';
-import './styles/Footer.scss';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import AnimatedRoutes from './routes/AnimatedRoutes';

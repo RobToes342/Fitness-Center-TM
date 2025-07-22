@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import logoLongBlack from '../assets/Logo-Long-Black.png';
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import '../styles/Navbar.scss';
 
@@ -31,6 +33,7 @@ export default function Navbar() {
       title: "Studio",
       path: "/",
       sub: [
+        { text: "Studio", to: "/" },
         { text: "Reha-Sport", href: "#reha-sport" },
         { text: "TM WOMEN", href: "#tm-women" },
         { text: "50+", href: "#50plus" }
@@ -40,6 +43,7 @@ export default function Navbar() {
       title: "Kampfsport",
       path: "/kampfsport",
       sub: [
+        { text: "Kampfsport", to: "/kampfsport" },
         { text: "Unser Verein", to: "/unser-verein" },
         { text: "Judo", to: "/judo" },
         { text: "Taekwando", to: "/taekwando" },
@@ -56,7 +60,7 @@ export default function Navbar() {
     },
     {
       title: "Über Uns",
-      path: "/ueber-uns",
+      path: "/team",
       sub: [
         { text: "Team", to: "/team" },
         { text: "Galerie", to: "/galerie" }
@@ -64,7 +68,7 @@ export default function Navbar() {
     },
     {
       title: "Kontakt",
-      path: "/kontakt",
+      path: "/impressum",
       sub: [
         { text: "Impressum", to: "/impressum" },
         { text: "Datenschutz", to: "/datenschutz" }
@@ -78,7 +82,11 @@ export default function Navbar() {
       animate={{ y: showNavbar ? 0 : '-100%' }}
       transition={{ duration: 0.3 }}
     >
-      <div className="logo">Fitness Center TM</div>
+      <div className="logo">
+        <NavLink to="/">
+        <img src={logoLongBlack} alt="Logo" />
+        </NavLink>
+      </div>
 
       <div className={`burger ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <span></span><span></span><span></span>

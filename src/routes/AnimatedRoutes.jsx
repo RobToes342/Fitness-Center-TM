@@ -1,6 +1,8 @@
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+// eslint-disable-next-line no-unused-vars
 import { AnimatePresence, motion } from 'framer-motion';
+
 
 // Importiere alle Pages
 import Homepage from '../pages/Homepage';
@@ -10,10 +12,8 @@ import Judo from '../pages/Judo';
 import Taekwando from '../pages/Taekwando';
 import Kursplan from '../pages/Kursplan';
 import Kurse from '../pages/Kurse';
-import UeberUns from '../pages/UeberUns';
 import Team from '../pages/Team';
 import Galerie from '../pages/Galerie';
-import Kontakt from '../pages/Kontakt';
 import Impressum from '../pages/Impressum';
 import Datenschutz from '../pages/Datenschutz';
 
@@ -80,13 +80,6 @@ export default function AnimatedRoutes() {
             <Kurse />
           </motion.div>
         } />
-
-        {/* Über Uns */}
-        <Route path="/ueber-uns" element={
-          <motion.div variants={pageVariants} initial="initial" animate="in" exit="out" transition={pageTransition}>
-            <UeberUns />
-          </motion.div>
-        } />
         <Route path="/team" element={
           <motion.div variants={pageVariants} initial="initial" animate="in" exit="out" transition={pageTransition}>
             <Team />
@@ -95,13 +88,6 @@ export default function AnimatedRoutes() {
         <Route path="/galerie" element={
           <motion.div variants={pageVariants} initial="initial" animate="in" exit="out" transition={pageTransition}>
             <Galerie />
-          </motion.div>
-        } />
-
-        {/* Kontakt */}
-        <Route path="/kontakt" element={
-          <motion.div variants={pageVariants} initial="initial" animate="in" exit="out" transition={pageTransition}>
-            <Kontakt />
           </motion.div>
         } />
         <Route path="/impressum" element={

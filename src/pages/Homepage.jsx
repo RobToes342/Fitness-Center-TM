@@ -1,8 +1,9 @@
-import logoLarge from '../assets/Logo-Large-White.png'
-import markusMaehler from '../assets/Markus-Maehler.png'
-import bgMaehler from '../assets/home-modern-bg-autor.jpg'
+//import logoLarge from '../assets/Logo-Large-White.png'
+//import markusMaehler from '../assets/Markus-Maehler.png'
+//import bgMaehler from '../assets/home-modern-bg-autor.jpg'
 import CurvedLoop from '../ReactBits/CurvedLoop';
 import CountUp from '../ReactBits/CountUp';
+import './styles/Homepage.scss';
 
 function Homepage() { 
   return (
@@ -20,14 +21,6 @@ function Homepage() {
       duration={1}
       className="count-up-text"
     />
-    {/* 
-    <img id='markus-maehler' src={markusMaehler}/>
-    3 Sachen müssen geandert
-
-1. 
-die Navlinks sollen beim hover ein drop menu anzeigen mit weitere Navlinks:
-unter Studio: sind links die auf der hauptseite weiter leiten zum beispiel href="#reha-sport" also Reha-Sport, TM WOMEN, 50+
-     */}
     <CurvedLoop 
       marqueeText="Fitness ✦ Kurse ✦ Judo ✦ Taekwando ✦ CyberFitness ✦ Körperanalye ✦ Temming ✦ Mähler ✦ Solarium ✦ Kampfsport ✦ Einzeleinführung ✦ Rehasport ✦"
       speed={1}
