@@ -14,7 +14,7 @@
   }
 
   h3 {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin-bottom: 0.5rem;
     color: index.$primary-color; // Akzentfarbe für Überschrift
   }
@@ -32,12 +32,15 @@
   }
 
   .generall-info-link {
+    cursor: pointer;
     transition: color 0.3s ease-out;
 
     &:hover {
       color: index.$secondary-color;
+      
          a {
             color: index.$secondary-color;
+            
         }
 
     }
@@ -68,14 +71,16 @@
       flex-wrap: wrap;
       gap: 0.8rem;
       margin-top: 0.5rem;
+      
 
       .link-icon {
-        font-size: 1.4rem;
+        font-size: 1.9rem;
         color: #333;
-        transition: color 300ms ease-out !important; 
+        transition: color, transform 300ms ease-out !important; 
 
         &:hover {
           color: index.$secondary-color;
+          transform: scale(1.3);
         }
       }
     }

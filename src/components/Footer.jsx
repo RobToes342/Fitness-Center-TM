@@ -10,9 +10,9 @@ function Footer() {
         <div className="footer__column">
           <h3>Fitness Centrum TM</h3>
           <div className='footer__generall'>
-            <p><FontAwesomeIcon icon={faMapMarkerAlt} /> Konrad-Adenauer-Straße 21, 42651 Solingen</p>
-            <p className="generall-info-link"><FontAwesomeIcon icon={faPhoneAlt} /> <a href="tel:+49212204747">+49 (0)212 204747</a></p>
-            <p className="generall-info-link"><FontAwesomeIcon icon={faEnvelope} /> <a href="mailto:info@fitness-tm.de">info@fitness-tm.de</a></p>
+            <p className="generall-info-link"><FontAwesomeIcon icon={faMapMarkerAlt} /><a href="https://maps.app.goo.gl/Zczkpi9mz7w8w9To8">Konrad-Adenauer-Straße 21, 42651 Solingen</a></p>
+            <p className="generall-info-link"><FontAwesomeIcon icon={faPhoneAlt} /><a href="tel:+49212204747">+49 (0)212 204747</a></p>
+            <p className="generall-info-link"><FontAwesomeIcon icon={faEnvelope} /><a href="mailto:info@fitness-tm.de">info@fitness-tm.de</a></p>
           </div>
         </div>
 

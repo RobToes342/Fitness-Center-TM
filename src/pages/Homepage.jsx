@@ -3,7 +3,7 @@
 //import bgMaehler from '../assets/home-modern-bg-autor.jpg'
 import CurvedLoop from '../ReactBits/CurvedLoop';
 import CountUp from '../ReactBits/CountUp';
-import './styles/Homepage.scss';
+import '../styles/Homepage.scss';
 
 function Homepage() { 
   return (
