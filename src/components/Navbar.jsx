@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import logoLongBlack from '../assets/Logo-Long-Black.png';
+import logoLongBlack from '../assets/images/Logo-Long-Black.png';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import '../styles/Navbar.scss';
 
 export default function Navbar() {
@@ -11,15 +13,28 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState(null); // Für mobile Akkordeon
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setShowNavbar(currentScrollY < 6.25 || currentScrollY < lastScrollY);
-      setLastScrollY(currentScrollY);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+useEffect(() => {
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY < 100) {
+      // Ganz oben: Navbar immer zeigen
+      setShowNavbar(true);
+    } else if (currentScrollY > lastScrollY) {
+      // Runter scrollen: verstecken
+      setShowNavbar(false);
+    } else {
+      // Hoch scrollen: zeigen
+      setShowNavbar(true);
+    }
+
+    setLastScrollY(currentScrollY);
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, [lastScrollY]);
+
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
@@ -77,6 +92,7 @@ export default function Navbar() {
   ];
 
   return (
+    <>
     <motion.nav
       className="navbar"
       animate={{ y: showNavbar ? 0 : '-100%' }}
@@ -147,5 +163,14 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </motion.nav>
+    <div className='social-media'>
+      <a href="https://www.instagram.com/trainer_temming/" target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={faInstagram} className="link-icon" />
+      </a>
+      <a href="https://www.facebook.com/trainer.temming/" target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={faFacebookF} className="link-icon" />
+      </a>
+    </div>
+    </>
   );
 }

@@ -2,22 +2,114 @@
 
 .homepage {
   
-}
 
+  &__content {
+    display: flex;
+  }
 
-.logo-large {
-  cursor: pointer;
-  height: 6em;
-  margin: 1rem auto 0;
-  transition: filter 500ms ease-out;
-
-}
-#markus-maehler {
-  border-radius: 0.5rem;
-}
-
-.title-screen {
+  &__studio {
   width: 100vw;
+  max-width: 100vw;
+  height: 100dvh;
+  padding: 2rem;
+  display: flex;
+  justify-content: flex-end; // Video ist rechts
+  align-items: center;
+  background-color: #f0f0f0;
+  position: relative;
+  z-index: 500;
+  overflow: hidden;
+}
+
+}
+
+.count-up-text {
+  display: none;
+  font-size: 5rem;
+  color: index.$tertiary-color;
+  font-family: 'oswald', sans-serif;
+}
+
+.bg-markus-maehler {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  max-width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  pointer-events: none;
+  .markus-maehler {
+    border-radius: 0.5rem;
+
+    @media (max-width: 768px) {
+      width: 300vw;
+      
+  }
+  }
+
+
+
+}
+.title-screen {
+  position: relative; 
+  max-width: 100vw;
   height: 100dvh;
   background-color: #000000;
+  overflow: hidden;
+}
+
+.arrow {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: clamp(4rem, 20vw, 15rem);
+  height: auto;
+  z-index: 5;
+  
+
+  @media (max-width: 768px) {
+    display: none !important;
+  
+  }
+}
+
+.arrow-right {
+  left: 10%;
+  transform: translateY(-50%) rotate(50deg);
+}
+
+.arrow-left {
+  top: 47%;
+  right: 10%;
+  transform: translateY(-50%) scaleX(-1) scale(2);
+}
+
+// Trainer-Namen
+.trainer-name {
+  position: absolute;
+  top: 25%; // Feinjustieren je nach Bild
+  font-size: clamp(2rem, 5vw, 5rem);
+  color: #FFF;  
+  font-family: 'Oswald', sans-serif;
+  z-index: 6;
+  white-space: nowrap;
+
+  @media (max-width: 768px) {
+    top: 20%;
+  }
+}
+
+.name-left {
+  left: clamp(2rem, 5vw, 15rem); // Position über dem Pfeil
+}
+
+.name-right {
+  right: 10%;
+} 
+
+.dumbbell-animation {
+  width: clamp(150px, 30vw, 400px);
+  border-radius: 1rem;
+  pointer-events: none;
+  z-index: 1000;
 }

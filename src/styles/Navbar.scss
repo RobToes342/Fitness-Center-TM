@@ -1,4 +1,5 @@
 @use "./index.scss" as index;
+@use 'sass:color';
 @import url('https://use.fontawesome.com/releases/v5.0.1/css/all.css');
 
 
@@ -13,7 +14,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 clamp(2rem, 5vw, 15rem);
-  z-index: 1000;
+  z-index: 2000;
   font-family: "Oswald" !important;
   font-weight: 500 !important;
 }
@@ -39,7 +40,8 @@
       content: "\f078";
       font-family: 'Font Awesome\ 5 Free';
       font-weight: 600;
-      transition: transform 300ms ease;    // nur transform reicht, schneller
+      transition: color, transform 300ms ease-out;    // nur transform reicht, schneller
+
       transform-origin: center;            // optional, für saubere Rotation
       margin-left: 0.3rem;
       transform: rotate(0deg) ;
@@ -47,6 +49,7 @@
     &:hover::after {
       transform: rotate(180deg) ;
       color: index.$secondary-color;
+      transition: color, transform 300ms ease-out;
     }
 
     a {
@@ -180,6 +183,38 @@
   div.open > a {
   color: index.$secondary-color;
 }
+}
+
+.social-media {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  z-index: 1050;
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.5rem;
+  cursor: pointer;
+  
+
+  .link-icon {
+    transition: color, background-color 500ms ease-out; 
+    background-color: index.$secondary-color;
+    color: index.$primary-color;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 0.05rem;
+
+    &:hover {
+      color: index.$secondary-color;
+      background-color: #000
+    }
+  }
+
 }
 
 @media (max-width: 768px) {
