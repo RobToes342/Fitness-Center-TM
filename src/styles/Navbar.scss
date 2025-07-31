@@ -215,10 +215,15 @@
     }
   }
 
+  &:nth-child(3) {
+    transform: scaleX(-1);
+  }
+
 }
 
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .burger { display: flex; }
   .navbar { padding: 0 2rem; }
+  .link-icon { width: 1.0rem !important; height: 1.0rem !important;}
 }

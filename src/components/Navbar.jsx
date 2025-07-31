@@ -5,6 +5,8 @@ import logoLongBlack from '../assets/images/Logo-Long-Black.png';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+
 import '../styles/Navbar.scss';
 
 export default function Navbar() {
@@ -169,6 +171,9 @@ useEffect(() => {
       </a>
       <a href="https://www.facebook.com/trainer.temming/" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faFacebookF} className="link-icon" />
+      </a>
+      <a href="tel:+49212204747" target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={faPhoneAlt} className="link-icon" />
       </a>
     </div>
     </>
