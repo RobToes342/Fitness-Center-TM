@@ -98,6 +98,7 @@
   height: 100dvh;
   overflow: hidden;
   pointer-events: none;
+  user-select: none;
   filter: brightness(0.8);
   .markus-maehler {
     border-radius: 0.5rem;
@@ -125,7 +126,7 @@
 
 .title {
   position: absolute;
-  top: 5%;              // Abstand vom oberen Rand
+  top: 2%;              // Abstand vom oberen Rand
   left: 50%;             // Horizontale Mitte des Containers
   transform: translateX(-50%) !important; // Horizontales Ausgleichen
   font-size: clamp(2rem, 3vw, 3rem);
@@ -137,7 +138,7 @@
   
   
   @media (max-width: 768px) {
-    top: 3%;
+    top: 1.5%;
     font-size: clamp(1.5rem, 3vw, 3rem);
   }
 }
@@ -313,3 +314,10 @@
     }
   }
 }
+
+/*
+
+background: #DB242A;
+background: linear-gradient(90deg, rgba(219, 36, 42, 1) 0%, rgba(239, 94, 98, 1) 20%, rgba(252, 142, 150, 1) 40%, rgba(255, 187, 197, 1) 60%, rgba(255, 233, 238, 1) 80%, rgba(255, 255, 255, 1) 100%);
+
+*/

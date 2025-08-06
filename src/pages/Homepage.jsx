@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import CountUp from '../ReactBits/CountUp.jsx';
+import InfoSections from '../components/InfoSections.jsx';
 // eslint-disable-next-line no-unused-vars
 import { motion, useInView } from 'framer-motion';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
@@ -29,7 +30,7 @@ function Homepage() {
     { count: 1000, text1: "MEHR ALS", text2: "ZUFRIEDENE MITGLIEDER" },
     { count: 40, text1: "ÜBER", text2: "KURSE" },
     { count: 40, text1: "STOLZE", text2: "JAHRE ERFAHRUNG" },
-    { count: 20, text1: "MOTIVIERTE", text2: "MITARBEITER IM TEAM" },
+    { count: 23, text1: "MOTIVIERTE", text2: "MITARBEITER IM TEAM" },
   ]
 
   useEffect(() => {
@@ -155,7 +156,7 @@ if (screenWidth > 1400) {
           <span className='red'>M</span>ähler
         </motion.div>
       </div>
-
+      
       {isMobile ? (
         // 📱 Mobile View
         <div className="homepage__mobile-specials">
@@ -177,7 +178,7 @@ if (screenWidth > 1400) {
         </div>
       ) : (
         // 🖥 Desktop View bleibt wie gehabt
-        <div className="homepage__content">
+        
           <div className='homepage__studio' ref={ref}>
             <motion.video
               className="dumbbell-animation"
@@ -216,8 +217,8 @@ if (screenWidth > 1400) {
               </motion.div>
             ))}
           </div>
-        </div>
       )}
+    <InfoSections/>
       <div className='homepage__info'>
         {counts.map((item, idx) => (
           <motion.div

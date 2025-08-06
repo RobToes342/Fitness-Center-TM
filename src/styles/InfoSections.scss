@@ -1,0 +1,177 @@
+.info-sections {
+  width: 100%;
+  
+  .info-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    padding: 2rem;
+    background-color: f0f0f0; // Einheitlicher dunkler Hintergrund
+    color: #000;
+    gap: 2rem;
+
+    .info-content {
+      flex: 1;
+      max-width: 600px;
+
+      .title-section {
+        font-family: 'Oswald', sans-serif;
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      button {
+        position: relative;
+        overflow: hidden;
+        padding: 0.6rem 1.2rem;
+        border: 0.2rem solid #000;
+        font-size: 1.1rem;
+        font-weight: 1000;
+        background: transparent;
+        color: #000;
+        cursor: pointer;
+        font-family: 'Roboto', sans-serif;
+
+        // pseudo-element für animation
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 0%;
+          background: #000;
+          z-index: -10;
+          transition: height 0.3s ease;
+        }
+
+        // text über dem pseudo
+        position: relative;
+        z-index: 10;
+        transition: color 0.3s ease;
+
+        &:hover::before {
+          height: 100%;
+        }
+
+        &:hover {
+          color: #fff;
+        }
+      }
+
+    }
+
+    .info-image {
+      flex: 1;
+      max-width: 600px;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 0.8rem;
+      }
+    }
+
+    &.align-left {
+      flex-direction: row-reverse;
+    }
+
+    &.align-right {
+      flex-direction: row;
+    }
+
+    @media (min-width: 900px) {gap: 8rem;}
+
+    @media (max-width: 1200px) {height: 70dvh;}
+  }
+
+  // Beispiel für unterschiedliche Styles je nach Thema:
+  .section-about .info-content h2 {
+    color: #f9d342;
+  }
+
+  .section-rehasport .info-content h2 {
+    color: #50c878;
+  }
+
+  .section-kurse .info-content h2 {
+    color: #4fb3ff;
+  }
+
+  .section-kampfsport .info-content h2 {
+    color: #e74c3c;
+  }
+
+
+
+  @media (max-width: 900px) {
+    background-color: #000;
+
+    .info-block {
+      position: relative;
+      height: 100dvh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      
+
+      .info-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+
+        img {
+          border-radius: 0 !important;
+          width: 100vw;
+          height: 100dvh;
+          object-fit: cover;
+          filter: brightness(0.4);
+        }
+      }
+
+      .info-content {
+        position: relative;
+        z-index: 1;
+        max-width: 90%;
+        text-align: center;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        .title-section {
+          color: #fff;
+        }
+
+        button {
+          border-color: #fff;
+          color: #fff;
+
+          &::before {
+            background: #fff;
+          }
+
+          &:hover {
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+
+
+}

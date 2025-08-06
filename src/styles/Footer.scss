@@ -105,6 +105,11 @@
 
     .social-icons {
       justify-content: center;
+      gap: 1.2rem;
+      a {
+        transform: scale(1.8);
+
+      }
     }
 
     h3 {

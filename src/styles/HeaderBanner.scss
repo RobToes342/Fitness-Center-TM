@@ -1,0 +1,86 @@
+
+@use "./index.scss" as index;
+
+.header-banner {
+  position: relative;
+  width: 100%;
+  height: 30dvh;
+  min-height: 14rem;
+  overflow: hidden;
+  isolation: isolate;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.02);
+    filter: brightness(0.85);
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.45) 60%,
+      rgba(0, 0, 0, 0.55) 100%
+    );
+    z-index: 1;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; // vertikal zentriert
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem; // Abstand zwischen Titel und Button
+    padding: 2rem clamp(1rem, 4vw, 3rem);
+  }
+
+  &__title {
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
+    line-height: 1.1;
+    color: #fff;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.7);
+  }
+
+  &__back {
+    
+    color: #fff;
+    text-decoration: none;
+    font: 800 1.2rem/1 "Roboto", sans-serif;
+    backdrop-filter: blur(6px);
+    transition: color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      color: index.$secondary-color;
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+
+/* Optional: dunkler Shadow unten für besseren Textkontrast */
+@media (min-width: 800px) {
+  .header-banner__overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0.35) 50%,
+      rgba(0, 0, 0, 0.55) 100%
+    );
+  }
+}
