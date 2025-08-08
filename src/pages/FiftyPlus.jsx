@@ -4,12 +4,12 @@ import HeaderBanner from "../components/HeaderBanner";
 import fitnessWomanStudio from '../assets/images/fitness_woman_studio.jpg';
 import '../styles/Team.scss';
 
-export default function Kursplan() {
+export default function FiftyPlus() {
 
 
   return (
     <div >
-      <HeaderBanner title="Kursplan" image={fitnessWomanStudio} />
+      <HeaderBanner title="50+" image={fitnessWomanStudio} />
     </div>
   )
     

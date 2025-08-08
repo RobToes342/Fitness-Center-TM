@@ -1,15 +1,15 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import HeaderBanner from "../components/HeaderBanner";
-import fitnessWomanStudio from '../assets/images/fitness_woman_studio.jpg';
+import fitnessWomanStudio from '../assets/images/Woman_Studio.jpg';
 import '../styles/Team.scss';
 
-export default function Kursplan() {
+export default function TmWoman() {
 
 
   return (
     <div >
-      <HeaderBanner title="Kursplan" image={fitnessWomanStudio} />
+      <HeaderBanner title="Tm Woman" image={fitnessWomanStudio} />
     </div>
   )
     

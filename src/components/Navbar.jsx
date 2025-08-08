@@ -51,9 +51,9 @@ useEffect(() => {
       path: "/",
       sub: [
         { text: "Studio", to: "/" },
-        { text: "Reha-Sport", href: "#reha-sport" },
-        { text: "TM WOMEN", href: "#tm-women" },
-        { text: "50+", href: "#50plus" }
+        { text: "Rehasport", to: "/rehasport" },
+        { text: "TM WOMEN", to: "/tm-woman" },
+        { text: "50+", to: "/50-plus" }
       ]
     },
     {
@@ -64,7 +64,7 @@ useEffect(() => {
         { text: "Unser Verein", to: "/unser-verein" },
         { text: "Judo", to: "/judo" },
         { text: "Taekwando", to: "/taekwando" },
-        { text: "Kursplan", to: "/kursplan" }
+        { text: "Kursplan", to: "/kursplan-kampfsport" }
       ]
     },
     {

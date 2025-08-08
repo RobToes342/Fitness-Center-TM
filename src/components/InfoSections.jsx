@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import SplitText from "../ReactBits/Spilttext";
-import "../ReactBits/GlareHover";
 import '../styles/InfoSections.scss';
 import Kampfsport from '../assets/images/Kampfsport.jpg';
 import Kurse from '../assets/images/Kurse.jpg';
@@ -94,14 +93,7 @@ const opacity = { opacity: 0 , position: 'absolute', zIndex: '100' };
             {isMobile ?
               <img src={item.img} alt={item.title} />  
             :          
-              <GlareHover
-                  glareColor="#ffffff"
-                  glareOpacity={0.3}
-                  glareAngle={-30}
-                  glareSize={300}
-                  transitionDuration={1000}
-                  playOnce={false}
-              >
+              <GlareHover>
                 <img src={item.img} alt={item.title} />
               </GlareHover>
             }
