@@ -1,0 +1,155 @@
+
+@use "./index.scss" as index;
+
+.kurse-page {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding-bottom: 4rem;
+  font-family: 'Roboto', sans-serif;
+
+    section {
+    width: 80vw;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #222;
+    }
+  }
+}
+
+/* Kursübersicht */
+.kurse-overview {
+  .kurs-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.5rem;
+
+    .kurs-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: index.$secondary-color;
+      }
+
+      p {
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.4;
+      }
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+}
+
+/* Wochenplan */
+.wochenplan {
+  .plan-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+
+    .plan-tag {
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: #1976d2;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          font-size: 0.9rem;
+          color: #444;
+          padding: 0.3rem 0;
+          border-bottom: 1px solid #eee;
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.blockkurse {
+  .blockkurse-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+
+    img {
+      flex: 1 1 350px;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 100%;
+      object-fit: cover;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    div {
+      flex: 1 1 300px;
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #333;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+/* Mobile Version → Bild als Hintergrund */
+@media (max-width: 900px) {
+  .blockkurse {
+    .blockkurse-content {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+      border-radius: 12px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      img {
+        display: none; // Bild-Tag verstecken
+      }
+
+      div {
+        background: rgba(255, 255, 255, 0.85);
+        padding: 1rem;
+        border-radius: 8px;
+
+        p {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
