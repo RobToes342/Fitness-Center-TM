@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import markus from '../assets/images/team-01-marcus-temming.jpg'; 
@@ -10,8 +9,6 @@ import '../styles/Team.scss';
 import GlareHover from "../ReactBits/GlareHover";
 
 export default function Team() {
-
-  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 900);
 
   const teamMembers = [
     {
@@ -80,15 +77,6 @@ export default function Team() {
     }
   ];
 
-  useEffect(() => {
-    const checkScreen = () => {
-      setIsMobile(window.innerWidth <= 900 || window.innerHeight <= 900);
-    };
-    checkScreen();
-    window.addEventListener('resize', checkScreen);
-    return () => window.removeEventListener('resize', checkScreen);
-  }, []);
-
   return (
     <div className="team-page">
       <HeaderBanner title="Unser Team" image={pageTitle} />
@@ -103,13 +91,7 @@ export default function Team() {
             viewport={{ once: true }}
           >
             <div className="team-img">
-              {isMobile ? 
                 <img src={member.image} alt={member.name} />
-              : 
-                <GlareHover>
-                    <img src={member.image} alt={member.name} />
-                </GlareHover>
-              }
               
             </div>
             <div className="team-info">
@@ -137,9 +119,7 @@ export default function Team() {
         >
           Unser Team
         </motion.h2>
-        <GlareHover className='glare-hover'>
         <img className="team-photo" src={team} />  
-        </GlareHover>
         <p>
           Unser qualifiziertes Team bildet sich ständig auf Kongressen, Seminaren, Schulungen und Messen weiter und ist immer für Sie da.
           Besonders wichtig ist es uns allen, dass wir Sie mit Namen ansprechen. Hier sind die Mitglieder nicht nur Nummern!

@@ -1,4 +1,3 @@
-
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import HeaderBanner from "../components/HeaderBanner";
@@ -7,7 +6,7 @@ import kursraum from '../assets/images/fitness_kursraum.jpg';
 import GlareHover from "../ReactBits/GlareHover";
 import '../styles/Kurse.scss';
 
-export default function Kurse() {
+export default function Courses() {
 
   const kursBeschreibungen = [
     { name: "#CyberFitness", beschreibung: "Virtuelle Kurse mit innovativen Workouts – flexibel und effektiv." },
@@ -109,19 +108,19 @@ export default function Kurse() {
   };
 
   return (
-    <div className="kurse-page">
+    <div className="courses-page">
       <HeaderBanner title="Kurse" image={fitnessWomanStudio} />
 
-      {/* Kursarten */}
-      <section className="kurse-overview">
+      {/* Course Types */}
+      <section className="courses-overview">
         <motion.h2 initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.5}}>
           Unsere Kursangebote
         </motion.h2>
-        <div className="kurs-list">
+        <div className="course-list">
           {kursBeschreibungen.map((kurs, i) => (
             <motion.div 
               key={i} 
-              className="kurs-card"
+              className="course-card"
               initial={{opacity:0, y:20}} 
               whileInView={{opacity:1, y:0}} 
               viewport={{once:true}} 
@@ -134,16 +133,16 @@ export default function Kurse() {
         </div>
       </section>
 
-      {/* Wochenplan */}
-      <section className="wochenplan">
+      {/* Weekly Plan */}
+      <section className="weekly-schedule">
         <motion.h2 initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.5}}>
           Wochenplan
         </motion.h2>
-        <div className="plan-container">
+        <div className="schedule-container">
           {Object.entries(wochenplan).map(([tag, kurse], i) => (
             <motion.div 
               key={tag} 
-              className="plan-tag"
+              className="schedule-day"
               initial={{opacity:0, y:20}} 
               whileInView={{opacity:1, y:0}} 
               viewport={{once:true}} 
@@ -158,13 +157,13 @@ export default function Kurse() {
         </div>
       </section>
 
-      {/* Blockkurse */}
-      <section className="blockkurse">
+      {/* Block Courses */}
+      <section className="block-courses">
         <motion.h2 initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.5}}>
           Blockkurse
         </motion.h2>
-        <div className="blockkurse-content">
-          <GlareHover><img src={kursraum} alt="Kursraum" /></GlareHover>
+        <div className="block-courses-content">
+          <img src={kursraum} alt="Kursraum" />
           <div>
             <p>
               Zusätzlich zu unserem laufenden Kursprogramm bieten wir regelmäßig Blockkurse an – 
