@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import HeaderBanner from "../components/HeaderBanner";
-import fitnessWomanStudio from '../assets/images/Woman_Studio.jpg';
-import '../styles/Team.scss';
+import fitnessWomanStudio from '../assets/images/woman-studio.jpg';
+import '../styles/TmWoman.scss';
 
 export default function TmWoman() {
 

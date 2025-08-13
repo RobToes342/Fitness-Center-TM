@@ -4,10 +4,10 @@ import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import SplitText from "../ReactBits/Spilttext";
 import '../styles/InfoSections.scss';
-import Kampfsport from '../assets/images/Kampfsport.jpg';
-import Kurse from '../assets/images/Kurse.jpg';
-import Rehasport from '../assets/images/Rehasport.jpg';
-import UeberUns from '../assets/images/UeberUns.jpg';
+import Kampfsport from '../assets/images/kampfsport.jpg';
+import Kurse from '../assets/images/kurse.jpg';
+import Rehasport from '../assets/images/rehasport.jpg';
+import UeberUns from '../assets/images/ueberuns.jpg';
 import GlareHover from "../ReactBits/GlareHover";
 
 export default function InfoSections() {

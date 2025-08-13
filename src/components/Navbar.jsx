@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import logoLongBlack from '../assets/images/Logo-Long-Black.png';
+import logoLongBlack from '../assets/images/logo-long-black.png';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

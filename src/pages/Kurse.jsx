@@ -1,12 +1,21 @@
+import { useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import HeaderBanner from "../components/HeaderBanner";
-import fitnessWomanStudio from '../assets/images/fitness_woman_studio.jpg';
-import kursraum from '../assets/images/fitness_kursraum.jpg';
+import fitnessWomanStudio from '../assets/images/fitness-woman-studio.jpg';
+import kursraum from '../assets/images/fitness-kursraum.jpg';
 import GlareHover from "../ReactBits/GlareHover";
 import '../styles/Kurse.scss';
 
 export default function Courses() {
+
+   useEffect(() => {
+    document.querySelectorAll(".weekly-schedule li").forEach((item) => {
+      if (item.textContent.toLowerCase().includes("#cyberfitness")) {
+        item.style.opacity = "0.6";
+      }
+    });
+  }, []);
 
   const kursBeschreibungen = [
     { name: "#CyberFitness", beschreibung: "Virtuelle Kurse mit innovativen Workouts – flexibel und effektiv." },
@@ -116,6 +125,9 @@ export default function Courses() {
         <motion.h2 initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.5}}>
           Unsere Kursangebote
         </motion.h2>
+        <motion.h3 initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.5}}>
+          im Groupfitness-Raum mit Schwingboden
+        </motion.h3>
         <div className="course-list">
           {kursBeschreibungen.map((kurs, i) => (
             <motion.div 
@@ -155,6 +167,16 @@ export default function Courses() {
             </motion.div>
           ))}
         </div>
+          <div className="weekly-info">
+            <p>Stufe I = Einsteiger</p>
+            <p>Stufe II = Fortgeschrittene</p>
+            <p>* = Kurs in Planung</p>
+            <p>Bitte für alle Kurse am Empfang einchecken.</p>
+            <p>Kurse finden ab 6 Teilnehmern statt</p>
+            <p>WORLD JUMPING® maximal 8 Teilnehmer/innen (#Cyberfitness)</p>
+            <p>Pump Intervall: maximal 12 Teilnehmer/innen pro Kurs (#Cyberfitness)</p>
+            <p>TM Selfdefence: Selbstverteidigungs-Kurse separat buchbar (Einzelstunden oder 8er Gruppen)</p>
+          </div>
       </section>
 
       {/* Block Courses */}

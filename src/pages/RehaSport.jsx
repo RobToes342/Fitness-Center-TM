@@ -1,10 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import HeaderBanner from "../components/HeaderBanner";
-import fitnessWomanStudio from '../assets/images/fitness_woman_studio.jpg';
-import rehaSport1 from '../assets/images/RehaSport01.jpg';
-import rehaSport2 from '../assets/images/RehaSport02.jpg';
-import rehaSport3 from '../assets/images/RehaSport03.jpg';
+import fitnessWomanStudio from '../assets/images/fitness-woman-studio.jpg';
+import rehaSport1 from '../assets/images/rehasport01.jpg';
+import rehaSport2 from '../assets/images/rehasport02.jpg';
+import rehaSport3 from '../assets/images/rehasport03.jpg';
 import '../styles/Rehasport.scss';
 import GlareHover from "../ReactBits/GlareHover";
 

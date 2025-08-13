@@ -4,7 +4,7 @@ import InfoSections from '../components/InfoSections.jsx';
 // eslint-disable-next-line no-unused-vars
 import { motion, useInView } from 'framer-motion';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import markusMaehler from '../assets/images/Markus-Maehler.jpg';
+import markusMaehler from '../assets/images/markus-maehler.jpg';
 import dumbbellVideo from '../assets/videos/DumbelAnimation.webm';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faCertificate, faCalendarDays, faComments } from "@fortawesome/free-solid-svg-icons";

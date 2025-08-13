@@ -1,12 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import markus from '../assets/images/team-01-marcus-temming.jpg'; 
-import dirk from '../assets/images/team-02-dirk-maehler.jpg';
-import team from '../assets/images/tm-team.jpg';  
+import markus from '../assets/images/team-01-marcus-temming-5.jpg'; 
+import dirk from '../assets/images/team-02-dirk-maehler-6.jpg';
+import team from '../assets/images/tm-team-7.jpg';  
 import HeaderBanner from "../components/HeaderBanner";
-import pageTitle from '../assets/images/page-title-team.jpg';
+import pageTitle from '../assets/images/page-title-team-3.jpg';
 import '../styles/Team.scss';
-import GlareHover from "../ReactBits/GlareHover";
 
 export default function Team() {
 
