@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import HeaderBanner from "../components/HeaderBanner";
 import fitnessWomanStudio from '../assets/images/fitness-woman-studio.jpg';
 import kursraum from '../assets/images/fitness-kursraum.jpg';
+import ueberuns from '../assets/images/ueberuns.jpg';
 import GlareHover from "../ReactBits/GlareHover";
 import '../styles/Kurse.scss';
 
@@ -166,6 +167,8 @@ export default function Courses() {
               </ul>
             </motion.div>
           ))}
+        <motion.img className="schedule-img" src={ueberuns}
+        initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.5}}/>
         </div>
           <div className="weekly-info">
             <p>Stufe I = Einsteiger</p>

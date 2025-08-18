@@ -4,7 +4,7 @@ import markus from '../assets/images/team-01-marcus-temming-5.jpg';
 import dirk from '../assets/images/team-02-dirk-maehler-6.jpg';
 import team from '../assets/images/tm-team-7.jpg';  
 import HeaderBanner from "../components/HeaderBanner";
-import pageTitle from '../assets/images/page-title-team-3.jpg';
+import pageTitle from '../assets/images/page-title-team-1.png';
 import '../styles/Team.scss';
 
 export default function Team() {
@@ -107,6 +107,14 @@ export default function Team() {
             </div>
           </motion.div>
         ))}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          Seit November 2023 dürfen Marcus Temming und Dirk Mähler den rot-weißen Gurt (6. DAN) tragen – eine Ehrung des lebenslangen Verdienstes für den Judosport.
+        </motion.div>
       </div>
 
       <section className="team-description">

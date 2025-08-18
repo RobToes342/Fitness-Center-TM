@@ -1,0 +1,231 @@
+@use "./index.scss" as index;
+
+.tarife-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 14, 13, 0.7);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+.tarife-modal {
+  background: #fff;
+  border-radius: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  padding: 3rem 2rem;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.5s ease forwards;
+
+  h2 {
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 0.5rem;
+    color: index.$primary-color;
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: index.$quaternary-color;
+    font-size: 1.1rem;
+  }
+
+  small {
+    display: block;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: index.$tertiary-color;
+    font-size: 0.85rem;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: index.$quaternary-color;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: index.$secondary-color;
+  }
+}
+
+.tarife-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.tarif-card {
+  position: relative;
+  background: #fff;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+  }
+
+  h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: index.$primary-color;
+  }
+
+  .price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: index.$secondary-color;
+    margin-bottom: 0.5rem;
+  }
+
+  .duration {
+    font-size: 0.95rem;
+    color: index.$tertiary-color;
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.95rem;
+      margin: 0.45rem 0;
+      transition: opacity 0.2s ease;
+
+      svg {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+      .feature-included {
+      color: index.$primary-color;
+
+      svg {
+        color: index.$secondary-color; // roter Haken
+      }
+    }
+
+    .feature-excluded {
+      color: index.$quaternary-color;
+      opacity: 0.6;                  // „leicht durchsichtig“
+      svg {
+        color: index.$tertiary-color;  // graues X
+      }
+    }
+
+    &.alt-price {
+      font-size: 0.85rem;
+      color: index.$quaternary-color;
+    }
+  }
+
+  &.tarif-highlight {
+    border: 2px solid index.$secondary-color;
+    margin: 0 !important;
+
+    .badge {
+      position: absolute;
+      top: -12px;
+      left: 1rem;
+      background: index.$secondary-color;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 15px rgba(218, 35, 40, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  &.highlight-bestes {
+    border-color: gold;
+    
+    .badge {
+      background: rgb(255, 215, 0);
+      color: #000;  
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  }
+  
+}
+}
+
+// PDF special card
+.pdf-card {
+  text-align: center;
+  background: linear-gradient(135deg, #f9f9f9, #fff);
+  border: 2px dashed index.$tertiary-color;
+
+  .pdf-icon {
+    margin-bottom: 1rem;
+    color: index.$secondary-color;
+  }
+
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.note {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  color: index.$quaternary-color;
+  line-height: 1.5;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Mobile optimization
+@media (max-width: 600px) {
+  .tarife-modal {
+    padding: 2rem 1rem;
+  }
+
+  .tarif-card {
+    padding: 1.5rem;
+    h3 {
+      font-size: 1.4rem;
+    }
+    .price {
+      font-size: 1.6rem;
+    }
+  }
+}
