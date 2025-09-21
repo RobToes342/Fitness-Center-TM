@@ -11,7 +11,7 @@
   .accordion-item {
     border-bottom: 1px solid index.$tertiary-color;
     margin-bottom: 0;
-
+    overflow: hidden;
     .accordion-header {
       position: relative;
       z-index: 100;

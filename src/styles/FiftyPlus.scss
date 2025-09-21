@@ -1,0 +1,112 @@
+@use "./index.scss" as index;
+
+.fiftyplus-page {
+  font-family: "Roboto", sans-serif;
+  color: index.$primary-color;
+
+  .fiftyplus-content {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+
+    .title-fiftyplus {
+      font-family: "Oswald", sans-serif;
+      font-size: 2.5rem;
+      color: index.$secondary-color;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      color: index.$tertiary-color;
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    .intro-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      color: index.$quaternary-color;
+    }
+
+    .images-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: scale(1.03);
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+
+    .section-title {
+      font-family: "Oswald", sans-serif;
+      font-size: 1.6rem;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      color: index.$secondary-color;
+    }
+
+    .benefits-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto 3rem auto;
+      max-width: 600px;
+      text-align: left;
+
+      li {
+        font-size: 1.1rem;
+        margin: 0.6rem 0;
+        padding-left: 1.8rem;
+        position: relative;
+        color: index.$primary-color;
+
+        &::before {
+          content: "✔";
+          position: absolute;
+          left: 0;
+          top: 0;
+          color: index.$secondary-color;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .contact-box {
+      background: #f9f9f9;
+      border-left: 15px solid index.$secondary-color;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      max-width: 700px;
+      margin: 0 auto;
+        text-align: left;
+      p {
+        font-size: 1.1rem;
+        margin: 0.5rem 0;
+        color: index.$primary-color;
+
+        .icon {
+          margin-right: 0.5rem;
+          color: index.$secondary-color;
+        }
+
+        strong {
+          color: index.$secondary-color;
+        }
+      }
+    }
+  }
+}
