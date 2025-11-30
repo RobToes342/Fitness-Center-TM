@@ -166,10 +166,10 @@ useEffect(() => {
       </AnimatePresence>
     </motion.nav>
     <div className='social-media'>
-      <a href="https://www.instagram.com/trainer_temming/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.instagram.com/fitnesscentrumtm/" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faInstagram} className="link-icon" />
       </a>
-      <a href="https://www.facebook.com/trainer.temming/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.facebook.com/FitnessCentrumTM" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faFacebookF} className="link-icon" />
       </a>
       <a href="tel:+49212204747" target="_blank" rel="noopener noreferrer">
